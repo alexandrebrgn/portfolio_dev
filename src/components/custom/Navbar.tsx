@@ -33,7 +33,7 @@ const iconLinks = [
 
 export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false)
-    const [isLargeScreen, setIsLargeScreen] = useState(false)
+    const [isLargeScreen, setIsLargeScreen] = useState(true)
     const pathname = usePathname()
 
     useEffect(() => {

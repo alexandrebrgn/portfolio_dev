@@ -79,6 +79,10 @@
 
   /* Transitions */
   --theme-transition: 0.2s ease-in-out;
+
+  .bg-gradient-orange {
+    background: var(--gradient-accent-orange);
+  }
 }
 
 :root.theme-dark {

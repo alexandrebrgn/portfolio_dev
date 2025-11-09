@@ -28,7 +28,7 @@ export default function MyCard({ src, alt = 'Image', className = '' }: SmartCard
 
         cardRef.current.style.setProperty('--x-rotation', `${xRotation}deg`)
         cardRef.current.style.setProperty('--y-rotation', `${yRotation}deg`)
-        cardRef.current.style.setProperty('--scale', '1.03')
+        cardRef.current.style.setProperty('--scale', '1.04')
     }
 
     const handleMouseLeave = () => {
@@ -45,8 +45,8 @@ export default function MyCard({ src, alt = 'Image', className = '' }: SmartCard
                 onMouseEnter={handleMouseEnter}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                className={`overflow-hidden rounded-4xl transition-transform duration-300 ease-out ${className}
-                border-white border-4 `}
+                className={`overflow-hidden transition-transform duration-300 ease-out ${className}
+                border-white border-5 `}
                 style={{
                     transformStyle: 'preserve-3d',
                     transform: 'scale(var(--scale)) rotateX(var(--x-rotation)) rotateY(var(--y-rotation))',
