@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import Icon from './Icon'
@@ -11,9 +11,9 @@ import {GoTerminal} from 'react-icons/go';
 
 const textLinks = [
     {label: 'Accueil', href: '/'},
-    {label: 'Compétences', href: '/skills/'},
-    {label: 'Projets', href: '/work/'},
-    {label: 'À propos', href: '/about/'}
+    {label: 'Compétences', href: '/skills'},
+    {label: 'Projets', href: '/work'},
+    {label: 'À propos', href: '/about'}
 ]
 
 const iconLinks = [
@@ -33,16 +33,7 @@ const iconLinks = [
 
 export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false)
-    const [isLargeScreen, setIsLargeScreen] = useState(true)
     const pathname = usePathname()
-
-    useEffect(() => {
-        const mediaQuery = window.matchMedia('(min-width: 50em)')
-        const handleChange = (e: MediaQueryListEvent) => setIsLargeScreen(e.matches)
-        setIsLargeScreen(mediaQuery.matches)
-        mediaQuery.addEventListener('change', handleChange)
-        return () => mediaQuery.removeEventListener('change', handleChange)
-    }, [])
 
     const isActive = (href: string) =>
         pathname === href || (href !== '/' && pathname.startsWith(href))
@@ -54,48 +45,45 @@ export default function NavBar() {
                     <Icon icon={<GoTerminal size={"full"}/>} color="var(--accent-regular)" size="1.6em" gradient/>
                     Alexandre Bourguignon
                 </Link>
-                {!isLargeScreen && (
-                    <button
-                        className="menu-button"
-                        aria-expanded={menuOpen}
-                        onClick={() => setMenuOpen(!menuOpen)}
-                    >
-                        <span className="sr-only">Menu</span>
-                        <Icon icon={<Menu size={"full"}/>}/>
-                    </button>
-                )}
+                <button
+                    className="menu-button"
+                    aria-expanded={menuOpen}
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    <span className="sr-only">Menu</span>
+                    <Icon icon={<Menu size={"full"}/>}/>
+                </button>
             </div>
 
-            {(menuOpen || isLargeScreen) && (
-                <div className={`menu-content ${isLargeScreen ? 'grid grid-cols-[1fr_auto_1fr]' : ''}`}>
-                    <ul className="nav-items">
-                        {textLinks.map(({label, href}) => (
-                            <li key={href}>
-                                <Link
-                                    href={href}
-                                    className={`link ${isActive(href) ? 'active' : ''}`}
-                                    aria-current={isActive(href) ? 'page' : undefined}
-                                >
-                                    {label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+            <div className={`menu-content ${menuOpen ? 'menu-open' : ''}`}>
+                <ul className="nav-items">
+                    {textLinks.map(({label, href}) => (
+                        <li key={href}>
+                            <Link
+                                href={href}
+                                className={`link ${isActive(href) ? 'active' : ''}`}
+                                aria-current={isActive(href) ? 'page' : undefined}
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                {label}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
 
-                    <div className="menu-footer">
-                        <div className="socials">
-                            {iconLinks.map(({href, icon, label}) => (
-                                <a key={label} href={href} className="social" aria-label={label}>
-                                    {icon}
-                                </a>
-                            ))}
-                        </div>
-                        <div className="theme-toggle">
-                            <ThemeToggle/>
-                        </div>
+                <div className="menu-footer">
+                    <div className="socials">
+                        {iconLinks.map(({href, icon, label}) => (
+                            <a key={label} href={href} className="social" aria-label={label}>
+                                {icon}
+                            </a>
+                        ))}
+                    </div>
+                    <div className="theme-toggle">
+                        <ThemeToggle/>
                     </div>
                 </div>
-            )}
+            </div>
         </nav>
     )
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React, { useRef } from 'react'
 
 type SmartCardProps = {
@@ -55,10 +56,13 @@ export default function MyCard({ src, alt = 'Image', className = '' }: SmartCard
                     '--scale': '1',
                 } as React.CSSProperties}
             >
-                <img
+                <Image
                     src={src}
                     alt={alt}
+                    width={1000}
+                    height={1000}
                     className="w-full h-full object-cover block"
+                    priority={src.includes('portrait')}
                 />
             </div>
         </div>

@@ -136,12 +136,16 @@ nav {
         padding: 0;
     }
 
+    .menu-button {
+        display: none !important; /* Ajoutez cette ligne pour cacher le bouton */
+    }
+
     .site-title {
         font-size: var(--text-lg);
     }
 
     .menu-content {
-        display: contents;
+        display: contents !important;
     }
 
     .nav-items {

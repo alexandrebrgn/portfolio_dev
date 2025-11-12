@@ -5,7 +5,7 @@ img: /assets/biomedis/preview.png
 img_alt: Screen of Biomedis Project
 description: Biomedis est une entreprise de relation medecin-praticien, qu ipropose des visites chez les praticien pour tester des médicaments. Cette application est composé d'une applications web et de son API.
 tags:
-  - Etudes
+  - "Etudes"
   - "WEB : React Vite"
   - "API : AdonisJs"
 ---
