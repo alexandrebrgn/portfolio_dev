@@ -29,7 +29,7 @@ Quelques screenshot de l'application afin d'avoir une idée
 - ### Login Page
 
     <div style="display: flex; align-items: flex-start; gap:10px;">
-        <img src="/assets/seven/login.png" width="200" style="border: 1px solid black;">
+        <img src="/assets/seven/login.png" width="200" style="border:>
         <div>
             La login page permet de se <strong>connecter à l'application</strong> à l'aide de ses identifiants.
             Le vérification d'un <strong>token</strong> dans le <strong>stockage</strong> local permet un connection automatique à l'application
@@ -38,7 +38,7 @@ Quelques screenshot de l'application afin d'avoir une idée
 
 - ### Accueil
     <div style="display: flex; align-items: flex-start; gap:10px;">
-        <img src="/assets/seven/home.png" width="200" style="border: 1px solid black;">
+        <img src="/assets/seven/home.png" width="200" >
   <div>
             L'<strong>accueil de l'application</strong> qu ifonctionne un peu comme un petit <strong>tableau de bord</strong>.
             On peut y trouver le nombre de véhicule à préparer.
@@ -46,15 +46,15 @@ Quelques screenshot de l'application afin d'avoir une idée
 
 - ### Préparation
     <div style="display: flex; align-items: flex-start; gap:10px;">
-        <img src="/assets/seven/restitute.png" width="200" style="border: 1px solid black;">
+        <img src="/assets/seven/restitute.png" width="200">
   <div>
             Voici la page sur laquelle on peut y retrouver <strong>tous les véhicules</strong> à préparer, c'est à dire vérifier avant de le céder au client
     </div>
 
 - ### Rapport
-    <div style="display: flex; align-items: flex-start; gap:10px;">
-        <img src="/assets/seven/report.png" width="200" style="border: 1px solid black;">
-        <img src="/assets/seven/report_2.png" width="200" style="border: 1px solid black;">
+    <div class="flex">
+        <img src="/assets/seven/report.png" width="200">
+        <img src="/assets/seven/report_2.png" width="200">
         <div>
             <strong>Remplissage d'un rapport</strong> lié à un véhicule en particulier.
             On y trouve des <strong>cases à cocher</strong> pour chaque partie du véhicule avec sa <strong>gravité du dommage</strong>.
@@ -64,7 +64,7 @@ Quelques screenshot de l'application afin d'avoir une idée
 
 - ### Rapport fini
   <div style="display: flex; align-items: flex-start; gap:10px;">
-      <img src="/assets/seven/report_done.png" width="200" style="border: 1px solid black;">
+      <img src="/assets/seven/report_done.png" width="200">
       <div>
         Le <strong>rapport</strong> a bien été créé on peut y retrouver <strong>l'immatriculation</strong> du véhicule dans l'alerte qui apparait en bas de l'écran.
       </div>

@@ -101,7 +101,7 @@ export default async function WorkProject({
             </Link>
           </div>
 
-          <div className="flex flex-col gap-5 border-b-[var(--gray-800)] border-b-2 pb-10">
+          <div className="flex flex-col gap-5  pb-10">
             <h1 itemProp="name">{project.data.title}</h1>
             <div className='flex justify-between gap-5 align-items'>
               <WorkBadgesList tags={project.data.tags ?? []} />

@@ -84,6 +84,10 @@
   .bg-gradient-orange {
     background: var(--gradient-accent-orange);
   }
+
+  .image-group > * {
+    border-radius: 1rem;
+  }
 }
 
 :root.theme-dark {
