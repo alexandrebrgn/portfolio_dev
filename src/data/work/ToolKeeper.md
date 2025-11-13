@@ -1,6 +1,6 @@
 ---
 title: ToolKeeper
-publishDate: 2024-01-20 00:00:00
+publishDate: 2024-01-20
 img: /assets/toolkeeper/home.png
 img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
 description: |

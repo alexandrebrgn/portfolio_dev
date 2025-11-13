@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: Props) {
 
   return (
     <Link href={`/work/${slug}`}
-      className="card relative grid grid-cols-[auto_1fr] grid-rows-[auto_1fr] h-80 bg-gradient-subtle border border-[var(--gray-800)] rounded-3xl overflow-hidden no-underline font-brand text-lg font-medium transition-shadow hover:shadow-xl"
+      className="card relative bg-gray-50 grid grid-cols-[auto_1fr] grid-rows-[auto_1fr] h-80 bg-gradient-subtle border border-[var(--gray-800)] rounded-3xl overflow-hidden no-underline font-brand text-lg font-medium transition-shadow hover:shadow-xl"
     >
       <div className="absolute top-2 left-2 py-2 px-4 bg-[var(--gray-999)] text-[var(--gray-0)] w-auto z-50 m-2 border-1 border-[var(--gray-500)] rounded-2xl">
         {data.title}

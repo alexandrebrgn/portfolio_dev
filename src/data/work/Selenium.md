@@ -17,7 +17,7 @@ Ce projet a été réalisé avec un collègue de cours. Le projet comporte une A
 
 ## Aperçu de l'application
 
-<img src="/assets/Selenium-full.png" width="10000">
+<img src="/assets/selenium/Selenium-full.png" width="10000">
 
 ### Inspiration
 

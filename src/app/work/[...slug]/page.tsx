@@ -5,7 +5,9 @@ import { getWorkProjectBySlug, getAllWorkProjects } from "@/lib/work";
 import Markdown from 'react-markdown';
 import WorkBadgesList from '@/components/custom/WorkBadgesList';
 import Link from 'next/link';
-import { ArrowLeftIcon, UserIcon } from 'lucide-react';
+import { ArrowLeftIcon } from 'lucide-react';
+import remarkGfm from 'remark-gfm';
+import MarkdownContent from '@/components/custom/MarkdownContent';
 
 // Générer les metadata statiques pour chaque projet
 export async function generateStaticParams() {
@@ -99,7 +101,7 @@ export default async function WorkProject({
             </Link>
           </div>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 border-b-[var(--gray-800)] border-b-2 pb-10">
             <h1 itemProp="name">{project.data.title}</h1>
             <div className='flex justify-between gap-5 align-items'>
               <WorkBadgesList tags={project.data.tags ?? []} />
@@ -109,8 +111,10 @@ export default async function WorkProject({
           <meta itemProp="datePublished" content={project.data.publishDate} />
         </article>
       </main>
-      <div>
-        <Markdown>{project.content}</Markdown>
+      <div className='flex justify-center'>
+        <div className='max-w-2/3'>
+          <MarkdownContent content={project.content}/>
+        </div>
       </div>
     </BaseLayout>
   );

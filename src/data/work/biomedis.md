@@ -12,13 +12,13 @@ tags:
 
 ## Intro
 
-Biomedis est une entreprise fictive sur laquelle pour laquelle j'ai créé une application lors de la dernière situation professionelle de BTS SIO 2ème anné.
+Biomedis est une entreprise fictive pour laquelle j'ai créé une application lors de la dernière situation professionelle de BTS SIO 2ème année.
 
 C'est une entreprise de relation **médecin-praticien**, qui propose des **visites** chez les **praticiens** pour tester des médicaments et pouvoir recevoir des échantillons.
 
 Cette application est composée d'une API développée en **AdonisJs** et **TypeScript** et d'une application web développée en **React** + **Vite** et **TypeScript**
 
-Pour réaliser le front de l'application web, la techno **shadcnui** a été utilisée.
+Pour réaliser le front de l'application web, la bibliothèque de composants UI **shadcnui** a été utilisée.
 ### MCD
 
 Pour mieux comprendre l'application voici le **MCD** de la base de données de l'application.
@@ -27,7 +27,7 @@ Pour mieux comprendre l'application voici le **MCD** de la base de données de l
 
 ## Visuels de l'application
 
-Quelques screenshot de l'application afin d'avoir une idée
+Quelques captures d'écrans de l'application afin d'avoir une idée
 
 #### Login
 
@@ -35,15 +35,15 @@ Quelques screenshot de l'application afin d'avoir une idée
 
 La page d'**authentification** de l'application est son **point d'entrée** elle permet de s'**identifier** pour pouvoir accéder à l'application.
 
-Elle **vérifie** aussi la **présence** est la **validité** d'un **token** dans le **stockage local** afin de ne pas avoir à passer par cette étape.
+Elle **vérifie** également la **présence** est la **validité** d'un **token** dans le **stockage local** afin de ne pas avoir à passer par cette étape.
 
 #### Praticiens
 
 <img src="/assets/biomedis/user.png" width="1000" style="border: solid darkgray 1px">
 
-La page **portefeuille de praticiens** permet de choir un des praticiens qui sont dans le même secteur que l'intervenant et de planifier un rendez-vous avec lui à l'avenir.
+La page **portefeuille de praticiens** permet de choisir un des praticiens qui sont dans le même secteur que l'intervenant et de planifier un rendez-vous avec lui à l'avenir.
 
-Pour cela, on peut chercher le praticien voulu dans la barre de recherche et selectioner organiser une visite.
+Pour cela, on peut chercher le praticien voulu dans la barre de recherche et selectioner "organiser une visite".
 
 <img src="/assets/biomedis/program.png" width="1000" style="border: solid darkgray 1px">
 
@@ -51,7 +51,7 @@ Pour cela, on peut chercher le praticien voulu dans la barre de recherche et sel
 
 <img src="/assets/biomedis/report.png" width="1000" style="border: solid darkgray 1px">
 
-La page **compte-rendus** permet de **vérifier** les **compte-rendu à rédiger** après avoir effectué la visite chez le praticien et de voir les **compte-rendus rédigés** par le passé.
+La page **compte-rendus** permet de **vérifier** les **compte-rendus à rédiger** après avoir effectué la visite chez le praticien. Elle permet de voir les **compte-rendus rédigés** par le passé.
 
 Lors de l'appui sur le bouton **rédiger** d'un des compte-rendus on se rend sur cette page.
 
