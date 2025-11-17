@@ -11,16 +11,29 @@ export default function ProjectCard({ project }: Props) {
 
   return (
     <Link href={`/work/${slug}`}
-      className="card relative bg-gray-50 grid grid-cols-[auto_1fr] grid-rows-[auto_1fr] h-80 bg-gradient-subtle border border-[var(--gray-800)] rounded-3xl overflow-hidden no-underline font-brand text-lg font-medium transition-shadow hover:shadow-xl"
+      className="
+      card relative
+      h-50 lg:h-80
+      bg-gray-50 grid grid-cols-[auto_1fr] grid-rows-[auto_1fr] bg-gradient-subtle border border-[var(--gray-800)]
+      rounded-2xl lg:rounded-3xl
+      overflow-hidden no-underline font-brand text-lg font-medium transition-shadow hover:shadow-xl"
     >
-      <div className="absolute top-2 left-2 py-2 px-4 bg-[var(--gray-999)] text-[var(--gray-0)] w-auto z-50 m-2 border-1 border-[var(--gray-500)] rounded-2xl">
+      <div className="
+      absolute
+      top-2 lg:top-4
+      left-2 lg:left-4
+      text-base lg:text-lg
+      py-1 lg:py-2
+      px-2 lg:px-4
+      bg-[var(--gray-999)] text-[var(--gray-0)] w-auto z-50 m-2 border-1 border-[var(--gray-500)]
+      rounded-lg lg:rounded-xl">
         {data.title}
       </div>
-      
+
       {data.tags && (
-        <div className="absolute bottom-4 left-4 flex gap-2 z-50">
+        <div className="absolute bottom-2 left-2 lg:bottom-4 lg:left-4 flex gap-2 z-50">
           {data.tags.map((tag, index) => (
-            <span 
+            <span
               key={index}
               className="text-[var(--gray-0)] bg-[var(--gray-999)] text-sm py-1 px-4 border-1 border-[var(--gray-500)] rounded-lg"
             >
@@ -29,7 +42,7 @@ export default function ProjectCard({ project }: Props) {
           ))}
         </div>
       )}
-      
+
       <Image
         src={data.img}
         alt={data.img_alt || ''}

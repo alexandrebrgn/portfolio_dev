@@ -19,11 +19,12 @@ function isProWork(work: WorkProjectWithSlug) {
 
 export default function Works() {
   const projects = getAllWorkProjects()
+  const title = "Mes projets";
+  const description = "Visionnez mes projets"
 
   return (
-    <BaseLayout>
+    <BaseLayout title={title} description={description}>
       <main>
-        <h1>Mes projets</h1>
         <ProjectGrid variant="offset">
           {projects.map((project) => (
             <li key={project.slug}>
