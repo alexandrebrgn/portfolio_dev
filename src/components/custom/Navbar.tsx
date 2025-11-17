@@ -5,9 +5,10 @@ import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import Icon from './Icon'
 import '@/styles/nav.css'
-import ThemeToggle from './ThemeToggle'
 import {BrandSpotify, BrandLinkedin, BrandGithub, BrandInstagram, Menu} from "@mynaui/icons-react"
 import {GoTerminal} from 'react-icons/go';
+import {AnimatedThemeToggler} from "@/components/ui/animated-theme-toggler";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillSpotify } from "react-icons/ai";
 
 const textLinks = [
     {label: 'Accueil', href: '/'},
@@ -17,17 +18,17 @@ const textLinks = [
 ]
 
 const iconLinks = [
-    {label: 'LinkedIn', href: 'https://www.linkedin.com/in/alexandre-bourguignon-2782b9273/', icon: <BrandLinkedin/>},
-    {label: 'GitHub', href: 'https://github.com/alexandrebrgn', icon: <BrandGithub/>},
+    {label: 'LinkedIn', href: 'https://www.linkedin.com/in/alexandre-bourguignon-2782b9273/', icon: <AiFillLinkedin/>},
+    {label: 'GitHub', href: 'https://github.com/alexandrebrgn', icon: <AiFillGithub/>},
     {
         label: 'Instagram',
         href: 'https://www.instagram.com/alex.brgn?utm_source=qr&igsh=MW80YnQ5Z3hibXh5YQ==',
-        icon: <BrandInstagram/>
+        icon: <AiFillInstagram/>
     },
     {
         label: 'Spotify',
         href: 'https://open.spotify.com/user/317zyqc4t6dezvqoutu7c3jjxgyi?si=Kl-h5J7fSeagWmvWjIKFnw',
-        icon: <BrandSpotify/>
+        icon: <AiFillSpotify/>
     }
 ]
 
@@ -80,7 +81,7 @@ export default function NavBar() {
                         ))}
                     </div>
                     <div className="theme-toggle">
-                        <ThemeToggle/>
+                        <AnimatedThemeToggler className="social"/>
                     </div>
                 </div>
             </div>
