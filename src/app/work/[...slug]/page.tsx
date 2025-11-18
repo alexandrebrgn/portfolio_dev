@@ -2,11 +2,9 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BaseLayout from "@/layouts/BaseLayout";
 import { getWorkProjectBySlug, getAllWorkProjects } from "@/lib/work";
-import Markdown from 'react-markdown';
 import WorkBadgesList from '@/components/custom/WorkBadgesList';
 import Link from 'next/link';
 import { ArrowLeftIcon } from 'lucide-react';
-import remarkGfm from 'remark-gfm';
 import MarkdownContent from '@/components/custom/MarkdownContent';
 
 // Générer les metadata statiques pour chaque projet
@@ -112,7 +110,7 @@ export default async function WorkProject({
         </article>
       </main>
       <div className='flex justify-center'>
-        <div className='max-w-2/3'>
+        <div className='lg:max-w-2/3'>
           <MarkdownContent content={project.content}/>
         </div>
       </div>

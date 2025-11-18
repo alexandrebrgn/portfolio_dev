@@ -31,11 +31,21 @@ export default function ProjectCard({ project }: Props) {
       </div>
 
       {data.tags && (
-        <div className="absolute bottom-2 left-2 lg:bottom-4 lg:left-4 flex gap-2 z-50">
+        <div className="
+        absolute
+        bottom-2 lg:bottom-4
+        left-2 lg:left-4
+        flex gap-2 z-50"
+        >
           {data.tags.map((tag, index) => (
             <span
               key={index}
-              className="text-[var(--gray-0)] bg-[var(--gray-999)] text-sm py-1 px-4 border-1 border-[var(--gray-500)] rounded-lg"
+              className="
+              text-[var(--gray-0)] bg-[var(--gray-999)]
+              text-xs lg:text-sm
+              py-1 px-4
+              border-1 border-[var(--gray-500)]
+              rounded-lg"
             >
               {tag}
             </span>

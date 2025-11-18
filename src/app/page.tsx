@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import StructuredData from "@/components/SEO/StructuredData";
 import HomeContent from "@/components/custom/HomeContent";
+import {getProjectsCustom} from "@/lib/work";
 
 export const metadata: Metadata = {
   title: "Accueil",
@@ -32,11 +33,12 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+    const projects = getProjectsCustom();
     return (
         <>
             <StructuredData type="Person" />
             <StructuredData type="WebSite" />
-            <HomeContent />
+            <HomeContent projects={projects}/>
         </>
     );
 }

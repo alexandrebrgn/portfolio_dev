@@ -20,7 +20,25 @@ export interface WorkProjectWithSlug {
   content: string;
 }
 
-export const getAllWorkProjects= cache((): WorkProjectWithSlug[] => {
+export const getProjectsCustom = cache((): WorkProjectWithSlug[] => {
+  // Slugs choisis en dur (les noms de fichiers sans .md)
+  const selectedSlugs = ["biomedis", "seven", "only-ghibli", "matodoliste"];
+
+  return selectedSlugs.map((slug) => {
+    const fullPath = path.join(workDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug,
+      data: data as WorkProject,
+      content,
+    };
+  });
+});
+
+export const getAllWorkProjects = cache((): WorkProjectWithSlug[] => {
   // Lire tous les fichiers .md dans le dossier work
   const fileNames = fs.readdirSync(workDirectory);
   const allProjectsData = fileNames

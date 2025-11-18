@@ -5,10 +5,9 @@ import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import Icon from './Icon'
 import '@/styles/nav.css'
-import {BrandSpotify, BrandLinkedin, BrandGithub, BrandInstagram, Menu} from "@mynaui/icons-react"
 import {GoTerminal} from 'react-icons/go';
 import {AnimatedThemeToggler} from "@/components/ui/animated-theme-toggler";
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillSpotify } from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillSpotify, AiOutlineMenu } from "react-icons/ai";
 
 const textLinks = [
     {label: 'Accueil', href: '/'},
@@ -52,11 +51,11 @@ export default function NavBar() {
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     <span className="sr-only">Menu</span>
-                    <Icon icon={<Menu size={"full"}/>}/>
+                    <Icon icon={<AiOutlineMenu size={"full"}/>}/>
                 </button>
             </div>
 
-            <div className={`menu-content ${menuOpen ? 'menu-open' : ''}`}>
+            <div className={`menu-content ${ menuOpen ? '' : 'hidden'}`}>
                 <ul className="nav-items">
                     {textLinks.map(({label, href}) => (
                         <li key={href}>
