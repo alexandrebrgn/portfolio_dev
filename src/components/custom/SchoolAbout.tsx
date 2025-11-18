@@ -9,7 +9,6 @@ interface RoadmapItemProps {
     rightRef?: RefObject<HTMLDivElement | null>;
     leftRef?: RefObject<HTMLDivElement | null>;
     children?: React.ReactNode;
-    middleVoid?: RefObject<HTMLDivElement | null>;
 }
 
 const RoadmapItem: React.FC<RoadmapItemProps> = ({
@@ -18,7 +17,6 @@ const RoadmapItem: React.FC<RoadmapItemProps> = ({
                                                      topRef,
                                                      leftRef,
                                                      rightRef,
-                                                     middleVoid,
                                                      children
                                                  }) => {
     const nodClasses = "absolute w-2 h-2 bg-[var(--gray-800)] rounded-full z-999"
@@ -102,7 +100,7 @@ export default function SchoolAbout() {
     const ref5 = useRef<HTMLDivElement>(null);
     const ref6 = useRef<HTMLDivElement>(null);
 
-    const [toggle, setToggle] = useState(true)
+    const [toggle, setToggle] = useState(false)
 
     return (
         <div ref={containerRef} className="relative w-full">
@@ -110,8 +108,8 @@ export default function SchoolAbout() {
                 onClick={() => setToggle(!toggle)} className="flex justify-between items-center cursor-pointer transition-colors hover:text-[var(--gray-700)]">
                 <h2 className="text-xl lg:text-3xl">Parcours scolaire</h2>
                 {toggle ? (
-                    <ArrowDown className="size-10 lg:size-20"/>
-                ) : (<ArrowRight className="size-10 lg:size-20"/>)}
+                    <ArrowDown className="text-[var(--accent-dark)] size-10 lg:size-20"/>
+                ) : (<ArrowRight className="text-[var(--accent-dark)] size-10 lg:size-20"/>)}
             </div>
             <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${

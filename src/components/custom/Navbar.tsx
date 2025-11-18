@@ -11,7 +11,7 @@ import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillSpotify, AiOutline
 
 const textLinks = [
     {label: 'Accueil', href: '/'},
-    {label: 'Compétences', href: '/skills'},
+    // {label: 'Compétences', href: '/skills'},
     {label: 'Projets', href: '/work'},
     {label: 'À propos', href: '/about'}
 ]

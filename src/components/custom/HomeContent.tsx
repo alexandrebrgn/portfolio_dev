@@ -6,7 +6,7 @@ import SplitText from "@/components/SplitText";
 import Button from "@/components/custom/Button";
 import {CodeXml, EyeIcon, Laptop, User} from "lucide-react";
 import ProjectGrid from "@/components/custom/ProjectGrid";
-import {getProjectsCustom, WorkProjectWithSlug} from "@/lib/work";
+import {WorkProjectWithSlug} from "@/lib/work";
 import ProjectCard from "@/components/custom/ProjectCard";
 import AnimatedContent from "@/components/AnimatedContent";
 
@@ -15,7 +15,6 @@ type HomeContentProps = {
 }
 
 export default function HomeContent({projects}: HomeContentProps) {
-
     return (
         <div>
             <BaseLayout>

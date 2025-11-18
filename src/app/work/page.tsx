@@ -1,9 +1,8 @@
 import {Metadata} from 'next';
 import BaseLayout from "@/layouts/BaseLayout";
-import {getAllWorkProjects, WorkProject, WorkProjectWithSlug} from "@/lib/work";
+import {getAllWorkProjects} from "@/lib/work";
 import ProjectGrid from "@/components/custom/ProjectGrid";
 import ProjectCard from "@/components/custom/ProjectCard";
-import AnimatedContent from "@/components/AnimatedContent";
 
 export const metadata: Metadata = {
     title: "Mes Projets",
@@ -13,10 +12,6 @@ export const metadata: Metadata = {
         description: "Portfolio de projets de développement web et applications.",
     },
 };
-
-function isProWork(work: WorkProjectWithSlug) {
-    return work.data.tags?.includes('Etudes') ?? false;
-}
 
 export default function Works() {
     const projects = getAllWorkProjects()

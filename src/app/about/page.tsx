@@ -9,11 +9,11 @@ export default function About() {
     const description = "Mon parcours en études et dans la vie professionelle"
     return (
         <BaseLayout title={title} description={description}>
-            <SchoolAbout/>
+            <ExperienceAbout/>
             <div className="h-20 flex items-center">
                 <div className="w-full border-b-2 border-[var(--gray-500)]"></div>
             </div>
-            <ExperienceAbout/>
+            <SchoolAbout/>
         </BaseLayout>
     )
 }

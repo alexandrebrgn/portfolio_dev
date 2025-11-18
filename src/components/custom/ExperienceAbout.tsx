@@ -9,7 +9,6 @@ interface RoadmapItemProps {
     rightRef?: RefObject<HTMLDivElement | null>;
     leftRef?: RefObject<HTMLDivElement | null>;
     children?: React.ReactNode;
-    middleVoid?: RefObject<HTMLDivElement | null>;
 }
 
 const RoadmapItem: React.FC<RoadmapItemProps> = ({
@@ -18,7 +17,6 @@ const RoadmapItem: React.FC<RoadmapItemProps> = ({
                                                      topRef,
                                                      leftRef,
                                                      rightRef,
-                                                     middleVoid,
                                                      children
                                                  }) => {
     const nodClasses = "absolute w-2 h-2 bg-[var(--gray-800)] rounded-full z-999"
@@ -68,11 +66,8 @@ export default function ExperienceAbout() {
     const ref2 = useRef<HTMLDivElement>(null);
     const ref3 = useRef<HTMLDivElement>(null);
     const ref4 = useRef<HTMLDivElement>(null);
-    const ref5 = useRef<HTMLDivElement>(null);
-    const ref6 = useRef<HTMLDivElement>(null);
-    const ref7 = useRef<HTMLDivElement>(null);
 
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(true);
 
     return (
         <div ref={containerRef} className="relative w-full">
@@ -81,9 +76,9 @@ export default function ExperienceAbout() {
                 className="flex justify-between items-center cursor-pointer transition-colors hover:text-[var(--gray-700)]">
                 <h2 className="text-xl lg:text-3xl">Experiences professionnelles</h2>
                 {toggle ? (
-                    <ArrowDown className="size-10 lg:size-20"/>
+                    <ArrowDown className="text-[var(--accent-dark)] size-10 lg:size-20"/>
                 ) : (
-                    <ArrowRight className="size-10 lg:size-20"/>
+                    <ArrowRight className="text-[var(--accent-dark)] size-10 lg:size-20"/>
                 )}
             </div>
             <div
@@ -165,7 +160,7 @@ export default function ExperienceAbout() {
                         </div>
                     </div>
                 </RoadmapItem>
-                <RoadmapItem position="left" order="last" topRef={ref4} rightRef={ref5}>
+                <RoadmapItem position="left" order="last" topRef={ref4}>
                     <div className="flex flex-col gap-4">
                         <div>
                             <div className="flex justify-between items-center">
@@ -204,8 +199,6 @@ export default function ExperienceAbout() {
 
                 <AnimatedBeam containerRef={containerRef} fromRef={ref1} toRef={ref2} curvature={10}/>
                 <AnimatedBeam containerRef={containerRef} fromRef={ref3} toRef={ref4} curvature={10} reverse={true}/>
-                <AnimatedBeam containerRef={containerRef} fromRef={ref5} toRef={ref6} curvature={10}/>
-                {/*<AnimatedBeam containerRef={containerRef} fromRef={ref7} toRef={ref8} curvature={10}/>*/}
             </div>
         </div>
     );

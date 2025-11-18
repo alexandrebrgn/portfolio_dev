@@ -80,7 +80,7 @@ export function getWorkProjectBySlug(slug: string): WorkProjectWithSlug | null {
       data: data as WorkProject,
       content,
     };
-  } catch (error) {
+  } catch (e) {
     return null;
   }
 }
