@@ -10,6 +10,9 @@ export default function About() {
     return (
         <BaseLayout title={title} description={description}>
             <SchoolAbout/>
+            <div className="h-20 flex items-center">
+                <div className="w-full border-b-2 border-[var(--gray-500)]"></div>
+            </div>
             <ExperienceAbout/>
         </BaseLayout>
     )

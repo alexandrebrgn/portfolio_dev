@@ -1,5 +1,5 @@
 import {RefObject, useRef, useState} from "react";
-import {ArrowDown, ArrowLeft, Dot, MapPinIcon} from "lucide-react";
+import {ArrowDown, ArrowRight, Dot, MapPinIcon} from "lucide-react";
 import {AnimatedBeam} from "@/components/AnimatedBeam";
 
 interface RoadmapItemProps {
@@ -24,39 +24,70 @@ const RoadmapItem: React.FC<RoadmapItemProps> = ({
     const nodClasses = "absolute w-2 h-2 bg-[var(--gray-800)] rounded-full z-999"
 
     return (
-        <div className={`flex w-full ${position === "left" ? "justify-start" : "justify-end"}`}>
-            <div className="relative w-1/2 p-4">
+        <div className={`flex gap-4 w-full gap-2 ${position === "left" ? "justify-start" : "justify-end"}`}>
+            <div className="relative w-full lg:w-1/2 p-4">
                 {position === "left" ? (
                     <div>
                         {order === "first" && (
-                            <span ref={rightRef}
-                                  className={`${nodClasses} top-1/2 right-0 -translate-y-1/2 translate-x-1/2`}/>
+                            <span ref={rightRef} className={`${nodClasses} 
+                                bottom-0 lg:top-1/2 
+                                right-1/2 lg:right-0 
+                                translate-y-1/2 lg:-translate-y-1/2 
+                                translate-x-1/1 lg:translate-x-1/2`}/>
                         )}
                         {order === "last" && (
-                            <span ref={topRef} className={`${nodClasses} top-0 left-1/2 -translate-y-1/2`}/>
+                            <span ref={topRef} className={`${nodClasses} 
+                                top-0 
+                                left-1/2 
+                                -translate-y-1/2`}/>
                         )}
                         {(order !== "last" && order !== "first") && (
                             <div>
-                                <span ref={topRef} className={`${nodClasses} top-0 left-1/2 -translate-y-1/2 `}/>
-                                <span ref={rightRef}
-                                      className={`${nodClasses} top-1/2 right-0 -translate-y-1/2 translate-x-1/2`}/>
+                                <span ref={topRef} className={`${nodClasses} 
+                                      top-0 left-1/2 
+                                      -translate-y-1/2`}/>
+                                <span ref={rightRef} className={`${nodClasses} 
+                                      bottom-0 lg:top-1/2 
+                                      right-1/2 lg:right-0 
+                                      translate-y-1/2 lg:-translate-y-1/2 
+                                      translate-x-1/1 lg:translate-x-1/2`}/>
                             </div>
                         )}
                     </div>
                 ) : (
                     <div>
-                        <span ref={topRef} className={`${nodClasses} top-0 left-1/2 -translate-y-1/2`}/>
-                        {order !== "last" && (
-                            <span ref={leftRef}
-                                  className={`${nodClasses} top-1/2 left-0 -translate-y-1/2 -translate-x-1/2`}/>
+                        {order === "first" && (
+                            <span ref={leftRef} className={`${nodClasses} 
+                                bottom-0 lg:top-1/2 
+                                right-1/2 lg:right-0 
+                                translate-y-1/2 lg:-translate-y-1/2 
+                                translate-x-1/1 lg:translate-x-1/2`}/>
+                        )}
+                        {order === "last" && (
+                            <span ref={topRef} className={`${nodClasses}
+                                top-0
+                                left-1/2
+                                -translate-y-1/2
+                                lg:-translate-x-1/2`}/>
+                        )}
+                        {order !== "last" && order !== "first" && (
+                            <div>
+                                <span ref={topRef} className={`${nodClasses} 
+                                    top-0 
+                                    left-1/2 
+                                    -translate-y-1/2`}/>
+                                <span ref={leftRef} className={`${nodClasses} 
+                                    bottom-0 lg:top-1/2 
+                                    right-1/2 lg:left-0 
+                                    translate-y-1/2 lg:-translate-y-1/2 
+                                    translate-x-1/1 lg:-translate-x-1/2`}/>
+                            </div>
                         )}
                     </div>
                 )}
                 <div className="text-[var(--gray-999)] bg-[var(--gray-100)] shadow-md rounded-lg p-4">
                     {children}
                 </div>
-                {/* Le point central */}
-
             </div>
         </div>
     );
@@ -70,21 +101,17 @@ export default function SchoolAbout() {
     const ref4 = useRef<HTMLDivElement>(null);
     const ref5 = useRef<HTMLDivElement>(null);
     const ref6 = useRef<HTMLDivElement>(null);
-    const ref7 = useRef<HTMLDivElement>(null);
 
     const [toggle, setToggle] = useState(true)
 
     return (
         <div ref={containerRef} className="relative w-full">
-            <div className="h-10 border-b-2 border-b-[var(--gray-500)]"></div>
-            <div className="h-10"></div>
-
             <div
                 onClick={() => setToggle(!toggle)} className="flex justify-between items-center cursor-pointer transition-colors hover:text-[var(--gray-700)]">
-                <h2>Parcours scolaire</h2>
+                <h2 className="text-xl lg:text-3xl">Parcours scolaire</h2>
                 {toggle ? (
-                    <ArrowDown size="60"/>
-                ) : (<ArrowLeft size="60"/>)}
+                    <ArrowDown className="size-10 lg:size-20"/>
+                ) : (<ArrowRight className="size-10 lg:size-20"/>)}
             </div>
             <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
@@ -120,6 +147,9 @@ export default function SchoolAbout() {
                         </div>
                     </div>
                 </RoadmapItem>
+
+                <div className="h-30 lg:h-0"/>
+
                 <RoadmapItem position="right" topRef={ref2} leftRef={ref3}>
                     <div className="flex flex-col">
                         <div>
@@ -144,6 +174,9 @@ export default function SchoolAbout() {
                         </div>
                     </div>
                 </RoadmapItem>
+
+                <div className="h-30 lg:h-0"/>
+
                 <RoadmapItem position="left" topRef={ref4} rightRef={ref5}>
                     <div className="flex flex-col">
                         <div className="flex justify-between items-center">
@@ -161,6 +194,9 @@ export default function SchoolAbout() {
                         </div>
                     </div>
                 </RoadmapItem>
+
+                <div className="h-30 lg:h-0"/>
+
                 <RoadmapItem position="right" order="last" topRef={ref6}>
                     <div className="flex flex-col gap-4">
                         <div>
@@ -194,7 +230,6 @@ export default function SchoolAbout() {
                 <AnimatedBeam containerRef={containerRef} fromRef={ref1} toRef={ref2} curvature={10}/>
                 <AnimatedBeam containerRef={containerRef} fromRef={ref3} toRef={ref4} curvature={10} reverse={true}/>
                 <AnimatedBeam containerRef={containerRef} fromRef={ref5} toRef={ref6} curvature={10}/>
-                {/*<AnimatedBeam containerRef={containerRef} fromRef={ref7} toRef={ref8} curvature={10}/>*/}
             </div>
         </div>
     );

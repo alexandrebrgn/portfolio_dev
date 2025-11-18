@@ -1,8 +1,6 @@
 import {RefObject, useRef, useState} from "react";
-import {ArrowDown, ArrowLeft, Dot, MapPinIcon, WorkflowIcon} from "lucide-react";
+import {ArrowDown, ArrowRight, Dot, MapPinIcon, WorkflowIcon} from "lucide-react";
 import {AnimatedBeam} from "@/components/AnimatedBeam";
-import LogoLoop from "@/components/LogoLoop";
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 
 interface RoadmapItemProps {
     position: "left" | "right";
@@ -78,16 +76,15 @@ export default function ExperienceAbout() {
 
     return (
         <div ref={containerRef} className="relative w-full">
-            <div className="h-10 border-b-2 border-b-[var(--gray-500)]"></div>
-            <div className="h-10"></div>
-
             <div
                 onClick={() => setToggle(!toggle)}
                 className="flex justify-between items-center cursor-pointer transition-colors hover:text-[var(--gray-700)]">
-                <h2>Experiences professionnelles</h2>
+                <h2 className="text-xl lg:text-3xl">Experiences professionnelles</h2>
                 {toggle ? (
-                    <ArrowDown size="60"/>
-                ) : (<ArrowLeft size="60"/>)}
+                    <ArrowDown className="size-10 lg:size-20"/>
+                ) : (
+                    <ArrowRight className="size-10 lg:size-20"/>
+                )}
             </div>
             <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
