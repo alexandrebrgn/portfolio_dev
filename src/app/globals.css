@@ -2,11 +2,9 @@
 @import "tw-animate-css";
 @import '../styles/markdown.css';
 
-/* Global variables */
-
-/** {*/
-/*	box-shadow: inset 0 0 0 1px red;*/
-/*}*/
+* {
+  /* box-shadow: inset 0 0 0 1px red; */
+}
 
 :root {
   /* Colors */
@@ -31,6 +29,8 @@
   --accent-overlay: hsla(280, 89%, 67%, 0.33);
   --accent-subtle-overlay: var(--accent-overlay);
   --accent-text-over: var(--gray-999);
+
+  --infocard: #1a1030;
 
   --link-color: var(--accent-regular);
 
@@ -111,6 +111,8 @@
   --accent-overlay: hsla(280, 89%, 67%, 0.33);
   --accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
   --accent-text-over: var(--gray-0);
+
+  --infocard: #613f91;
 
   --link-color: var(--accent-dark);
 

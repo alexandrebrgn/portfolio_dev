@@ -15,7 +15,7 @@ export default function BaseLayout({title, description, children}: BaseLayoutPro
         <div>
             <div className="stack backgrounds">
                 <Navbar/>
-                <div className="px-8 lg:px-36 pb-8 lg:pb-36">
+                <div className="px-16 lg:px-32 2xl:px-80 pb-8 lg:pb-16 2xl:pb-36">
                     {title && (
                         <div className="flex flex-col pb-10">
                             <h1 className="text-3xl lg:text-5xl">{title}</h1>
