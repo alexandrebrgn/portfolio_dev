@@ -110,7 +110,7 @@ export default async function WorkProject({
         </article>
       </main>
       <div className='flex justify-center'>
-        <div className='lg:max-w-2/3'>
+        <div className='w-full max-w-3xl lg:max-w-4xl'>
           <MarkdownContent content={project.content}/>
         </div>
       </div>
