@@ -4,7 +4,7 @@ publishDate: 2024-01-20
 img: /assets/toolkeeper/home.png
 img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
 description: |
-  ToolKeeper est le nom de l'application que j'ai developpé de A à Z durant un stage de 6 semaine à effectuer pour ma deuxième année de BTS SIO.
+  ToolKeeper est le nom de l'application que j'ai développée de A à Z durant un stage de 6 semaines à effectuer pour ma deuxième année de BTS SIO.
 tags:
   - Stage
   - "WEB : VUE3"
@@ -15,7 +15,7 @@ tags:
 
 ## Projet de stage de 2ème année BTS SIO.
 
-ToolKeeper est un projet developpé lors de mon stage de deuxième année de mon BTS SIO. Ce projet est une application de gestion des équipements du lycée et campus Notre Dame du Roc de La Roche sur Yon. Le but principal de ce projet est de pouvoir organiser des opérations sur des équipements. Le projet est constitué d'une API, d'une application Mobile (destinée aux opérateurs) est d'une application Web (destinée aux administrateurs des opérations).
+ToolKeeper est un projet développé lors de mon stage de deuxième année de mon BTS SIO. Ce projet est une application de gestion des équipements du lycée et campus Notre Dame du Roc de La Roche sur Yon. Le but principal de ce projet est de pouvoir organiser des opérations sur des équipements. Le projet est constitué d'une API, d'une application Mobile (destinée aux opérateurs) et d'une application Web (destinée aux administrateurs des opérations).
 
 <img src='/assets/toolkeeper/tool.png'>
 
