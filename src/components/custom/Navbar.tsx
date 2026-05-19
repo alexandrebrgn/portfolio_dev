@@ -1,17 +1,16 @@
 'use client'
 
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import Icon from './Icon'
 import '@/styles/nav.css'
 import {GoTerminal} from 'react-icons/go';
 import {AnimatedThemeToggler} from "@/components/ui/animated-theme-toggler";
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillSpotify, AiOutlineMenu } from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillSpotify, AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const textLinks = [
     {label: 'Accueil', href: '/'},
-    // {label: 'Compétences', href: '/skills'},
     {label: 'Projets', href: '/work'},
     {label: 'À propos', href: '/about'}
 ]
@@ -38,24 +37,41 @@ export default function NavBar() {
     const isActive = (href: string) =>
         pathname === href || (href !== '/' && pathname.startsWith(href))
 
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = ''
+        }
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setMenuOpen(false)
+        }
+        document.addEventListener('keydown', onKey)
+        return () => {
+            document.body.style.overflow = ''
+            document.removeEventListener('keydown', onKey)
+        }
+    }, [menuOpen])
+
     return (
-        <nav className="relative z-[9999] font-brand font-medium mb-14">
+        <nav className="relative z-[9999] font-brand font-medium 2xl:mb-14!">
             <div className="menu-header flex justify-between items-center gap-2 px-6 py-6">
-                <Link href="/" className="site-title flex items-center gap-2 text-gray-100 no-underline">
+                <Link href="/" className="site-title flex items-center gap-2 text-gray-100 no-underline" onClick={() => setMenuOpen(false)}>
                     <Icon icon={<GoTerminal size={"full"}/>} color="var(--accent-regular)" size="1.6em" gradient/>
                     Alexandre Bourguignon
                 </Link>
                 <button
                     className="menu-button"
                     aria-expanded={menuOpen}
+                    aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     <span className="sr-only">Menu</span>
-                    <Icon icon={<AiOutlineMenu size={"full"}/>}/>
+                    <Icon icon={menuOpen ? <AiOutlineClose size={"full"}/> : <AiOutlineMenu size={"full"}/>}/>
                 </button>
             </div>
 
-            <div className={`menu-content ${ menuOpen ? '' : 'hidden'}`}>
+            <div className={`menu-content ${menuOpen ? 'menu-open' : ''}`}>
                 <ul className="nav-items">
                     {textLinks.map(({label, href}) => (
                         <li key={href}>
