@@ -18,14 +18,15 @@ export default function HomeContent({projects}: HomeContentProps) {
     return (
         <div>
             <BaseLayout>
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+                <div className="home flex flex-col lg:flex-row items-center justify-between gap-10 mb-20!">
                     <div className="flex w-full gap-4 lg:gap-10 flex-col items-center lg:items-start">
 
+                        {/* sr-only : seulement pour les screen readers */}
                         <h1 className="sr-only">Alexandre Bourguignon - Portfolio</h1>
 
                         <SplitText
                             text="Bonjour, je suis Alexandre."
-                            className="text-4xl lg:text-8xl font-bold text-center flex items-center justify-center"
+                            className="text-4xl md:text-5xl lg:text-7xl 2xl:text-8xl font-bold text-center flex items-center justify-center"
                             delay={30}
                             duration={1.5}
                             ease="elastic.out(0.6, 0.3)"
@@ -38,7 +39,7 @@ export default function HomeContent({projects}: HomeContentProps) {
 
                         <div className="w-9/10 ">
                             <AnimatedContent delay={1.4}>
-                            <p className="text-xl lg:text-2xl text-center lg:text-start">Je suis étudiant en Bachelor
+                            <p className="text-lg xl:text-xl 2xl:text-2xl text-center lg:text-start">Je suis étudiant en Bachelor
                                 CDA au campus
                                 Notre-Dame du Roc à La Roche-Sur-Yon.</p>
                             </AnimatedContent>
@@ -69,6 +70,8 @@ export default function HomeContent({projects}: HomeContentProps) {
                         </AnimatedContent>
                     </div>
                 </div>
+                <div className="w-full border-t border-gray-200 mb-5! lg:mb-10!"/>
+                <h1 className="text-3xl lg:text-5xl mb-16!">Quelques projets.</h1>
                 <div className="">
                     <AnimatedContent>
                         <ProjectGrid variant="offset">

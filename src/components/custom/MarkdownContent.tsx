@@ -17,14 +17,34 @@ export default function MarkdownContent({content, className = ''}: MarkdownConte
         // HTML brut (div, span, etc.)
         div: ({node, className, style, children, ...props}: any) => {
             if (className?.includes("image-group")) {
-                console.log("children", children)
                 return (
-                    <div className="flex gap-4" {...props}>
+                    <div className="markdown-image-group" {...props}>
                         {children}
                     </div>
                 );
-            } else
-                return <div className={`markdown-div ${className || ''}`} style={style} {...props} />
+            }
+
+            // Si l'auteur a écrit un display:flex inline (souvent image + texte),
+            // on l'auto-rend responsive : colonne sur mobile, ligne sur desktop.
+            const isFlex = typeof style?.display === "string" && style.display.includes("flex");
+            if (isFlex) {
+                const restStyle = {...(style || {})};
+                delete restStyle.display;
+                delete restStyle.flexDirection;
+                delete restStyle.alignItems;
+                delete restStyle.gap;
+                return (
+                    <div
+                        className={`markdown-flex ${className || ''}`}
+                        style={restStyle}
+                        {...props}
+                    >
+                        {children}
+                    </div>
+                );
+            }
+
+            return <div className={`markdown-div ${className || ''}`} style={style} {...props} />
         },
         // Titres
         h1: ({node, ...props}) => (
@@ -60,19 +80,27 @@ export default function MarkdownContent({content, className = ''}: MarkdownConte
         },
 
         // Images (markdown et HTML)
-        img: ({node, src, alt, ...props}: any) => {
+        img: ({node, src, alt, width, ...props}: any) => {
             if (!src) return null;
 
-            const style = props.style || {};
+            const incomingStyle = props.style || {};
             const className = props.className || '';
+            // Les .md utilisent souvent width="10000" pour forcer 100%.
+            // On ignore les largeurs aberrantes et on laisse le CSS gérer.
+            const numericWidth = typeof width === "string" ? parseInt(width, 10) : width;
+            const hasFiniteWidth =
+                typeof numericWidth === "number" && !Number.isNaN(numericWidth) && numericWidth > 0 && numericWidth < 2000;
+            const style = hasFiniteWidth
+                ? {maxWidth: `${numericWidth}px`, width: "100%", ...incomingStyle}
+                : incomingStyle;
 
-            if (props.className && props.className != '' && props.className.includes('badge')) {
+            if (className?.includes('badge')) {
                 return (
                     <img
                         src={src}
                         alt={alt || ''}
                         style={style}
-                        className={`${className} rounded-2xl`}
+                        className={`${className} markdown-badge rounded-2xl`}
                     />
                 )
             }
@@ -81,7 +109,7 @@ export default function MarkdownContent({content, className = ''}: MarkdownConte
                     src={src}
                     alt={alt || ''}
                     style={style}
-                    className={`${className} rounded-xl border-2 border-[var(--gray-200)]`}
+                    className={`${className} markdown-img rounded-xl`}
                 />
             );
         },
