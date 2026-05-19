@@ -1,20 +1,21 @@
 ---
-title: Alizon
-publishDate: 2024-10-25 00:00:00
-img: /assets/alizon/preview.png
+title: Sapientia
+publishDate: 2026-04-12 00:00:00
+img: /assets/en-developpement.svg
 img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
 description: Alizon Group est une entreprise réelle pour laquelle on va créer une application entière 
 tags:
   - Etudes
-  - Web
-  - API
-  - Mobile
-  - Desktop
+  - Duo
+  - Nuxt
+  - SpringBoot
+  - Postgres
 ---
 
 ## Intro
 
-**Alizon Group** est une entreprise réelle pour laquelle on va créer une **application** entière : une **API**, avec une application **web**, **mobile** et **desktop**.
+MakeMenu est un contexte que j'ai développé après avoir découvert une nouvelle technologie en entreprise, NuxtJS. Le but principal de cette application est de pouvoir créer un menu principalement en fonction des aliments qu'on a déjà chez nous dont on ne sait pas quoi faire.
+Elle propose donc plusieurs fonctionnalités.
 
 ### API - AliAPi
 

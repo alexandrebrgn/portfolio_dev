@@ -18,15 +18,15 @@ tags:
 Un petit projet en **React-TypeScript + Vite et shadcn/ui** qui reproduit le comportement d'une **To-Do Liste classique**.
 
 Dans laquelle vous pouvez :
-- ➕ **Créer des tâches** avec un titre, une ddeadline et un niveau de priorité
+- ➕ **Créer des tâches** avec un titre, une deadline et un niveau de priorité
 - ✅ Marquer comme complété grâce à une case à cocher
 - ✏️ Mettre à jour dynamiquement la tâche (son titre, sa deadline, sa priorité)
 - 🗑️ Supprimer définitivement la tâche
 
 ### ✨ Fonctionnalités spéciales
 
-- 💾 Les tâches sont stockées dans le cache du navigateur, elle ne seront jamais perdues mise à part la suppression directe du cache.
-- 🌟 Dévelopé avec les composants de [shadcn/ui](https://ui.shadcn.com/) et les icones de [MynaUI](https://mynaui.com/icons) pour créer une UI simple et moderne.
+- 💾 Les tâches sont stockées dans le cache du navigateur, elles ne seront jamais perdues, sauf en cas de suppression directe du cache.
+- 🌟 Développé avec les composants de [shadcn/ui](https://ui.shadcn.com/) et les icônes de [MynaUI](https://mynaui.com/icons) pour créer une UI simple et moderne.
 
 ### 🔗 Projet déployé sur Vercel
 

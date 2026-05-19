@@ -13,7 +13,7 @@ tags:
 
 ## Projet de situation professionnelle de 2ème année BTS SIO.
 
-Ce projet a été réalisé avec un collègue de cours. Le projet comporte une API, une application web et une application mobile. Ce projet est un chat créé pour permettre aux utilisateurs d'un jeu fictif de pouvoir communiquer entre eux plus facilement. L'application mobile a pour but de pouvoir communiquer entre joueurs tandis que l'application web a pour but de modérer ces chats
+Ce projet a été réalisé avec un collègue de cours. Le projet comporte une API, une application web et une application mobile. Ce projet est un chat créé pour permettre aux utilisateurs d'un jeu fictif de pouvoir communiquer entre eux plus facilement. L'application mobile a pour but de permettre la communication entre joueurs, tandis que l'application web a pour but de modérer ces chats.
 
 ## Aperçu de l'application
 

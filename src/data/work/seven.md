@@ -13,11 +13,11 @@ tags:
 
 ## Résumé de l'application
 
-##### Situtation professionelle de 2ème année de BTS SIO
+##### Situation professionnelle de 2ème année de BTS SIO
 
 Ce projet a été réalisé seul et il comporte une API et une application mobile.
 
-Ce projet est fictivement pour une entreprise de **location de véhicule**. L'**application mobile** se permettra de s'occuper des **contrôles visuels** à procéder lors de la **restitution** et de la **récupération** des véhicules. Elle permettra des crééer un **rapport** à ces moments là pour déterminer si oui ou non et quelles parties du véhicules ont été endommagées.
+Ce projet est fictivement destiné à une entreprise de **location de véhicules**. L'**application mobile** permettra de s'occuper des **contrôles visuels** à effectuer lors de la **restitution** et de la **récupération** des véhicules. Elle permettra de créer un **rapport** à ces moments-là pour déterminer si oui ou non, et quelles parties du véhicule ont été endommagées.
 
   - Mobile : Dart + Flutter
   - Web : Laravel
@@ -25,14 +25,14 @@ Ce projet est fictivement pour une entreprise de **location de véhicule**. L'**
 
 ## Aperçu de l'application
 
-Quelques screenshot de l'application afin d'avoir une idée
+Quelques captures d'écran de l'application afin d'avoir une idée
 - ### Login Page
 
     <div style="display: flex; align-items: flex-start; gap:10px;">
         <img src="/assets/seven/login.png" width="200" style="border:>
         <div>
             La login page permet de se <strong>connecter à l'application</strong> à l'aide de ses identifiants.
-            Le vérification d'un <strong>token</strong> dans le <strong>stockage</strong> local permet un connection automatique à l'application
+            La vérification d'un <strong>token</strong> dans le <strong>stockage</strong> local permet une connexion automatique à l'application.
         </div>
     </div>
 
@@ -40,15 +40,15 @@ Quelques screenshot de l'application afin d'avoir une idée
     <div style="display: flex; align-items: flex-start; gap:10px;">
         <img src="/assets/seven/home.png" width="200" >
   <div>
-            L'<strong>accueil de l'application</strong> qu ifonctionne un peu comme un petit <strong>tableau de bord</strong>.
-            On peut y trouver le nombre de véhicule à préparer.
+            L'<strong>accueil de l'application</strong> qui fonctionne un peu comme un petit <strong>tableau de bord</strong>.
+            On peut y trouver le nombre de véhicules à préparer.
     </div>
 
 - ### Préparation
     <div style="display: flex; align-items: flex-start; gap:10px;">
         <img src="/assets/seven/restitute.png" width="200">
   <div>
-            Voici la page sur laquelle on peut y retrouver <strong>tous les véhicules</strong> à préparer, c'est à dire vérifier avant de le céder au client
+            Voici la page sur laquelle on peut retrouver <strong>tous les véhicules</strong> à préparer, c'est-à-dire à vérifier avant de les céder au client.
     </div>
 
 - ### Rapport
@@ -66,6 +66,6 @@ Quelques screenshot de l'application afin d'avoir une idée
   <div style="display: flex; align-items: flex-start; gap:10px;">
       <img src="/assets/seven/report_done.png" width="200">
       <div>
-        Le <strong>rapport</strong> a bien été créé on peut y retrouver <strong>l'immatriculation</strong> du véhicule dans l'alerte qui apparait en bas de l'écran.
+        Le <strong>rapport</strong> a bien été créé, on peut retrouver <strong>l'immatriculation</strong> du véhicule dans l'alerte qui apparaît en bas de l'écran.
       </div>
   </div>

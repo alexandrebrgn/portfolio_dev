@@ -15,9 +15,9 @@ tags:
 
 Projet personnel afin de découvrir et apprendre la technologie Three js
 
-### 📁 Acceder au projet
+### 📁 Accéder au projet
 
-[Lien du dépot GitHub](https://github.com/alexandrebrgn/DreamGarage) | [Lien du projet déployé](https://dreamgarage.vercel.app/) `Attendre un petit peu`
+[Lien du dépôt GitHub](https://github.com/alexandrebrgn/DreamGarage) | [Lien du projet déployé](https://dreamgarage.vercel.app/) `Attendre un petit peu`
 
 
 ### 💼 Compétences du projet

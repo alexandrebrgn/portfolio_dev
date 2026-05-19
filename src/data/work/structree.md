@@ -14,6 +14,6 @@ tags:
 
 **Structree** (Structure + Tree) est une application qui permet de générer un **arbre** de **structure** de projet à utiliser ensuite dans README.md de projet ou autre afin de donner une idée de la **structure d'un projet**.
 
-La conversion est **dynamique** et se base sur les espaces et les retours à la ligne, elle utilise donc le principe de **recursivité**.
+La conversion est **dynamique** et se base sur les espaces et les retours à la ligne, elle utilise donc le principe de **récursivité**.
 
 <img src="/assets/structree/structree.png" >
